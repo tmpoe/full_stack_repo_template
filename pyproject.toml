@@ -70,3 +70,7 @@ ignore = [
 ]
 fixable = ["ALL"]  # Allow fix for all enabled rules (when `--fix`) is provided.
 unfixable = []
+
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
