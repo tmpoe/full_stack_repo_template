@@ -1,3 +1,8 @@
-def myname(test: str) -> str:
-    """Shitty function with pydoc."""
-    return test
+from fastapi import FastAPI
+
+from backend.router.base_routes import routes
+
+app = FastAPI()
+
+app.include_router(routes())
+
