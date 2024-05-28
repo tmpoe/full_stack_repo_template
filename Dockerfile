@@ -35,7 +35,7 @@ COPY . /app/
 
 RUN poetry install
 
-HEALTHCHECK CMD curl -f http://localhost:8000/ || exit 1
+HEALTHCHECK CMD curl -f http://localhost:80/ || exit 1
 
 # Run the app with non-root user
 USER ${UGNAME}
