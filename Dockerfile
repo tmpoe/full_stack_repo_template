@@ -37,8 +37,6 @@ RUN poetry install
 
 HEALTHCHECK CMD curl -f http://localhost:8000/ || exit 1
 
-EXPOSE 8000
-
 # Run the app with non-root user
 USER ${UGNAME}
 ENTRYPOINT ["make", "run"]
