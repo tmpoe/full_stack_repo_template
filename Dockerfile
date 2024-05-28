@@ -27,11 +27,11 @@ RUN set -eux \
     && adduser --system --disabled-password --home /home/${UGNAME} --uid ${USER_UID} --ingroup ${UGNAME} ${UGNAME}
 
 
-WORKDIR /app/backend
+WORKDIR /app
 
 COPY poetry.lock pyproject.toml /code/
 
-COPY . ./app_backend
+COPY . /app/
 
 RUN poetry install
 
