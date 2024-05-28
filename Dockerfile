@@ -17,7 +17,7 @@ RUN set -eux \
     && apt-get update \
     && apt-get install -y \
     sed openssl libssl-dev ca-certificates libffi-dev gcc \
-    libc6-dev make musl-dev python3-dev python3-freetype vim \
+    libc6-dev make musl-dev python3-dev python3-freetype vim curl \
     && apt-get clean \
     \
     && pip install --upgrade pip setuptools wheel poetry>=1.8.1 \
