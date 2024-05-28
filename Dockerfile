@@ -4,11 +4,12 @@ COPY ./zscaler.crt /usr/local/share/ca-certificates/zscaler.crt
 RUN update-ca-certificates
 
 ENV REQUESTS_CA_BUNDLE /etc/ssl/certs/ca-certificates.crt
+ENV POETRY_VIRTUALENVS_CREATE=false
 
 # Create a non-root user (UGNAME means user and group name)
 ARG USER_UID=1000
 ARG GROUP_GID=1000
-ARG UGNAME=alm_service
+ARG UGNAME=example_backend
 
 
 # Install the system and Python packages
@@ -28,7 +29,11 @@ RUN set -eux \
 
 WORKDIR /app/backend
 
+COPY poetry.lock pyproject.toml /code/
+
 COPY . ./app_backend
+
+RUN poetry install
 
 HEALTHCHECK CMD curl -f http://localhost:8000/ || exit 1
 
@@ -36,4 +41,4 @@ EXPOSE 8000
 
 # Run the app with non-root user
 USER ${UGNAME}
-ENTRYPOINT ["fastapi", "dev", "backend/app.py"]
+ENTRYPOINT ["make", "run"]
