@@ -7,4 +7,4 @@ install-prod:
 	poetry install --no-dev
 
 run:
-	uvicorn  backend.app:app --host 0.0.0.0 --port 80
+	uvicorn  backend.app:app --host 0.0.0.0 --port 8000
