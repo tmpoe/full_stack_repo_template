@@ -1,5 +1,0 @@
-*.pyc
-__pycache__/
-dist/
-zscaler.crt
-backend/database
