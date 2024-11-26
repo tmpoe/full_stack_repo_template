@@ -4,9 +4,7 @@ version = "0.0.1"
 description = "Example project written in FastAPI."
 authors = ["Matyas File <filematyi@gmail.com>"]
 readme = "README.md"
-packages = [
-    { include = "backend"}
-]
+packages = [{ include = "product_name" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -31,9 +29,7 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.ruff]
-include = [
-    ".py"
-]
+include = [".py"]
 line-length = 120
 indent-width = 4
 
@@ -68,10 +64,8 @@ select = [
     "TID", # introduce module banning and force absolute imports
     "W",   # pycodestyles errors and warnings
 ]
-ignore = [
-    "D100"
-]
-fixable = ["ALL"]  # Allow fix for all enabled rules (when `--fix`) is provided.
+ignore = ["D100"]
+fixable = ["ALL"] # Allow fix for all enabled rules (when `--fix`) is provided.
 unfixable = []
 
 
