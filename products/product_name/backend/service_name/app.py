@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from backend.router.example_routes import example_routes
-from backend.router.user_routes import user_routes
+from controller.example_routes import example_routes
+from controller.user_routes import user_routes
 
 app = FastAPI()
 

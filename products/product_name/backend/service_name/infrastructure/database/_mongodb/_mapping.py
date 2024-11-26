@@ -1,5 +1,5 @@
-from backend.domain.entities import User, Address
-from backend.infrastructure.database._mongodb._models import UserDoc, AddressDoc
+from domain.entities import User, Address
+from infrastructure.database._mongodb._models import UserDoc, AddressDoc
 
 
 def map_user_to_user_doc(user: User) -> UserDoc:

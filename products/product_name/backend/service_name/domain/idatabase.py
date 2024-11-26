@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Self
 from uuid import UUID
 
-from backend.domain.entities import Address, User
+from domain.entities import Address, User
 
 
 class IDatabase(ABC):

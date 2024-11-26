@@ -1,7 +1,7 @@
 from backend import config
-from backend.domain.idatabase import IDatabase
+from domain.idatabase import IDatabase
 
-from backend.infrastructure.database._mongodb._database import MongoDatabase
+from infrastructure.database._mongodb._database import MongoDatabase
 
 
 def get_database() -> IDatabase | None:

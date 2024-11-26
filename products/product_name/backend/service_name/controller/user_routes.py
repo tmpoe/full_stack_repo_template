@@ -1,8 +1,9 @@
 from fastapi import APIRouter
 
-from backend.domain.entities import User
-from backend.router.data_transfer_objects import UserDTO
-from backend.services.user_management_service import UserManagementService
+from domain.entities import User, Address
+from router.data_transfer_objects import UserDTO
+from controller.mapping import map_user_dto_to_domain
+from services.user_management_service import UserManagementService
 
 
 def user_routes() -> APIRouter:
@@ -16,7 +17,7 @@ def user_routes() -> APIRouter:
 
     @router.post("")
     async def create(userdto: UserDTO):
-        user = User.from_dto(userdto=userdto)
+        user = map_user_dto_to_domain(userdto)
         service.create_user(user=user)
 
     return router

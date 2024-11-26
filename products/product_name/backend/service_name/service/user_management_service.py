@@ -1,7 +1,7 @@
 from typing import Self
 
-from backend.domain.entities import User
-from backend.infrastructure.database.database_factory import get_database
+from domain.entities import User
+from infrastructure.database.database_factory import get_database
 
 
 class UserManagementService():
