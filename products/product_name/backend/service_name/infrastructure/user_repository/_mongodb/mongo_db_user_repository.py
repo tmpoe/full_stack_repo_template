@@ -4,7 +4,7 @@ from mongoengine import connect
 
 from config import mongo_url, mongo_db, mongo_username, mongo_password
 from domain.entities import Address, User
-from products.product_name.backend.service_name.domain.repository.IUserRepository import IDatabase
+from service_name.domain.repository.IUserRepository import IDatabase
 from infrastructure.user_repository._mongodb._models import UserDoc
 from infrastructure.user_repository._mongodb._mapping import (
     map_userdoc_to_user, map_user_to_user_doc, map_adress_to_address_doc
