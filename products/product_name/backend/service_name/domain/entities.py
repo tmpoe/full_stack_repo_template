@@ -3,7 +3,7 @@ from typing import Optional, Self
 from uuid import UUID, uuid4
 from pydantic import BaseModel
 
-from router.data_transfer_objects import AddressDTO, UserDTO
+from controller.data_transfer_objects import AddressDTO, UserDTO
 
 
 class AppModel(BaseModel):
