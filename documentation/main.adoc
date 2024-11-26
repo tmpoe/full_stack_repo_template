@@ -1,3 +1,5 @@
+:doctype: book
+
 include::src/config.adoc[]
 
 = Generic, Develpoment-related Information
