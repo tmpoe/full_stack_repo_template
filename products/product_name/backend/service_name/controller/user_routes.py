@@ -1,3 +1,4 @@
+from uuid import UUID
 from fastapi import APIRouter
 
 from domain.entities import User, Address
@@ -19,5 +20,8 @@ def user_routes() -> APIRouter:
     async def create(userdto: UserDTO):
         user = map_user_dto_to_domain(userdto)
         service.create_user(user=user)
+
+    async def get_user(user_id: UUID) -> UserDTO:
+        return service.get_user(user=user_id)
 
     return router

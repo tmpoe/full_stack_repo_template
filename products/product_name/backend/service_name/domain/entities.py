@@ -1,39 +1,29 @@
 from enum import Enum
-from typing import Optional, Self
-from uuid import UUID, uuid4
-from pydantic import BaseModel
+from typing import Optional
+from uuid import UUID
+from pydantic import BaseModel, Field
 
 from controller.data_transfer_objects import AddressDTO, UserDTO
 
 
-class AppModel(BaseModel):
-    """Covering Model of the application."""
-
-
-class SupportedCountries(Enum):
-    """Enum class for representing supported countries."""
-
+class SupportedCountry(Enum):
     GERMANY = "DE"
     HUNGARY = "HU"
     AUSTRIA = "AT"
     CROATIA = "HR"
 
 
-class Address(AppModel):
-    """Model class represents User's address."""
-
+class Address(BaseModel):
     street: str
     house_number: str
     city: str
     postal_code: int
-    country: SupportedCountries
+    country: SupportedCountry
 
 
-class User(AppModel):
-    """Model class represents user profile."""
-
+class User(BaseModel):
     id: UUID
     first_name: str
     last_name: str
     age: int
-    address: Optional[Address] = {}
+    address: Optional[Address] = Field(default_factory=dict)

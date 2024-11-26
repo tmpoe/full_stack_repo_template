@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class AddressDTO(BaseModel):
@@ -14,5 +14,5 @@ class UserDTO(BaseModel):
     first_name: str
     last_name: str
     age: int
-    address: Optional[AddressDTO] = {}
+    address: Optional[AddressDTO] = Field(default_factory=dict)
 
