@@ -5,7 +5,7 @@ from uuid import UUID
 from domain.entities import Address, User
 
 
-class IDatabase(ABC):
+class IUserRepository(ABC):
     """Interface class of all Database connector."""
 
     @abstractmethod
