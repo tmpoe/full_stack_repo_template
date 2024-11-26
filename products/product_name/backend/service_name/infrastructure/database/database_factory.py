@@ -1,5 +1,5 @@
 from backend import config
-from domain.idatabase import IDatabase
+from products.product_name.backend.service_name.domain.repository.idatabase import IDatabase
 
 from infrastructure.database._mongodb._database import MongoDatabase
 

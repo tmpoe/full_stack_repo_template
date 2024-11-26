@@ -1,15 +1,16 @@
 from uuid import UUID
-from fastapi import APIRouter
 
-from domain.entities import User, Address
+from service_name.infrastructure.fastapi_utils import APIRouter
 from router.data_transfer_objects import UserDTO
 from controller.mapping import map_user_dto_to_domain
 from services.user_management_service import UserManagementService
 
+def get_prefix() -> str:
+    return "/user"
 
 def user_routes() -> APIRouter:
     """Define endpoints to control User related CRUD operations."""
-    router = APIRouter(prefix="/user")
+    router = APIRouter(prefix=get_prefix())
     service = UserManagementService()
 
     @router.get("/{user_id}")
