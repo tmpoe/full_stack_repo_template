@@ -5,7 +5,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi import FastAPI, Request, Response
 
 class LoggingMiddleware(BaseHTTPMiddleware):
-    def __init__(self, app: FastAPI) -> None:
+    def __init__(self, app: FastAPI, *args) -> None:
         super().__init__(app=app)
 
     async def __call__(self, request: Request, call_next: Callable) -> Response:

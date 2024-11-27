@@ -8,13 +8,13 @@ def example_routes() -> APIRouter:
     router = APIRouter(prefix="/example")
 
     @router.get("/")
-    async def root() -> None:
+    def root() -> None:
         """Define example route."""
         return {"Tec Exchange XII": "Welcome"}
 
 
     @router.get("/test")
-    async def test(test_query_param: Annotated[str, Query(...)]) -> None:
+    def test(test_query_param: Annotated[str, Query(...)]) -> None:
         """Define example route."""
         return {"Tec Exchange XII": "Welcome on /test"}
 

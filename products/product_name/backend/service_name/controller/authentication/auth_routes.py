@@ -29,6 +29,6 @@ def auth_routes() -> APIRouter:
             )
         access_token = AuthService.create_access_token(data={"sub": user["id"]})
         return {"access_token": access_token, "token_type": "bearer"}
-    
+        
     return router
 
