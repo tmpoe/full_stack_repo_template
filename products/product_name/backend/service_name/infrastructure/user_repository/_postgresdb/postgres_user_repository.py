@@ -15,7 +15,7 @@ from service_name.infrastructure.user_repository._postgresdb._mapping import (  
 from service_name.domain.service import IUserRepository
 from utils import get_session
 
-class UserRepository(IUserRepository):
+class PostgresUserRepository(IUserRepository):
     """Implementation of the IUserRepository interface for PostgreSQL."""
 
     def test_connection(self) -> None:

@@ -1,4 +1,6 @@
-from fastapi import APIRouter
+from typing import Annotated
+from fastapi import  Query
+from service_name.infrastructure.fastapi_utils import APIRouter
 
 
 def example_routes() -> APIRouter:
@@ -12,7 +14,7 @@ def example_routes() -> APIRouter:
 
 
     @router.get("/test")
-    async def test() -> None:
+    async def test(test_query_param: Annotated[str, Query(...)]) -> None:
         """Define example route."""
         return {"Tec Exchange XII": "Welcome on /test"}
 
