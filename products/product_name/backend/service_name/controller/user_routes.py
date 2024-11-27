@@ -32,9 +32,8 @@ def user_routes(
     @translate_service_exception
     async def create(
         userdto: UserDTO,
-        token: str = Depends(oauth2_scheme)
+        current_user = Depends(auth_service.get_current_user)
     ):
-        auth_service.get_current_user()
         user = map_user_dto_to_domain(userdto)
         user_management_service.create_user(user=user)
 
@@ -42,9 +41,9 @@ def user_routes(
     @translate_service_exception
     async def get_user(
             user_id: UUID,
-            token: str = Depends(oauth2_scheme)
+            current_user = Depends(auth_service.get_current_user)
         ) -> UserDTO:
-        auth_service.get_current_user()
+        auth_service.get_current_user(token)
         return user_management_service.get_user(user=user_id)
 
     return router
