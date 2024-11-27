@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from . import (  # Assuming these are in the same package
+from ._models import (  # Assuming these are in the same package
     UserORM,
 )
 from service_name.domain.entities import (  # Assuming these are in the same package
@@ -12,8 +12,8 @@ from service_name.infrastructure.user_repository._postgresdb._mapping import (  
     user_domain_to_orm,
     user_orm_to_domain,
 )
-from service_name.domain.service import IUserRepository
-from utils import get_session
+from service_name.domain.repository.IUserRepository import IUserRepository
+from .utils import get_session
 
 class PostgresUserRepository(IUserRepository):
     """Implementation of the IUserRepository interface for PostgreSQL."""

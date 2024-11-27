@@ -3,7 +3,6 @@ from typing import Optional
 from uuid import UUID
 from pydantic import BaseModel, Field
 
-from controller.data_transfer_objects import AddressDTO, UserDTO
 
 
 class SupportedCountry(Enum):

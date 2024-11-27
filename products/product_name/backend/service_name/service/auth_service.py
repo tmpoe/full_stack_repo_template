@@ -9,7 +9,7 @@ from fastapi import Depends
 import jwt
 from service_name.domain.exception import ServiceException
 from service_name.controller.authentication.consts import TOKEN_SECRET, TOKEN_ALGORITHM, TOKEN_EXPIRES_IN
-from service_name.domain.service import IAuthService
+from service_name.domain.service.IAuthService import IAuthService
 
 
 class AuthService(IAuthService):

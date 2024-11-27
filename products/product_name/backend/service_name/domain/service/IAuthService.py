@@ -1,9 +1,9 @@
 
 
 from abc import abstractmethod, ABC
-from uuid import UUID
 
-class IUserManagementService(ABC):
+class IAuthService(ABC):
+    oauth2_scheme = ""
     @abstractmethod
     async def get_current_user(token: str) -> dict:
         ...

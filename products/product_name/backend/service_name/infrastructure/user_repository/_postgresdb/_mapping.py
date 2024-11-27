@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from service_name.domain.entities import (  # Assuming these are in the same package
+from service_name.infrastructure.user_repository._postgresdb._models import (  # Assuming these are in the same package
     AddressORM,
     UserORM,
 )

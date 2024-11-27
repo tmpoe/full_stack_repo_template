@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 from uuid import UUID
-from domain.entities import User
+from service_name.domain.entities import User
 
 class IUserManagementService(ABC):
     @abstractmethod

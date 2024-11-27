@@ -5,7 +5,7 @@ from service_name.infrastructure.fastapi_utils import APIRouter
 
 def example_routes() -> APIRouter:
     """Register example routes."""
-    router = APIRouter(prefix="")
+    router = APIRouter(prefix="/example")
 
     @router.get("/")
     async def root() -> None:
