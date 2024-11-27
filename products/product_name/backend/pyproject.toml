@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "Example project written in FastAPI."
 authors = ["Matyas File <filematyi@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "product_name" }]
+packages = [{ include = "service_name" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
